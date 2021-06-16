@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>LOGIN</title>
+        <link rel="stylesheet" type="text/css" href="./login.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    </head>
+    <body>
+        <div class="container">
+            <div class="card">
+                <div class="inner-box" id="card">
+                    <div class="card-front">
+
+                    <div class="login-form">
+                        <h1>Login </h1>
+                        <form action="#">
+                            <p>E-mail</p>
+                            <input type="email" name="Email" placeholder="E-mail" required>
+                            
+                            <p>Password</p>
+                            <div class = "wrapper">
+                                <input type="password" name="password" placeholder="Password" id="myInput" required>
+                                <span class="eye" onclick="myFunction()">
+                                    <i id="eye-open" class="fa fa-eye" style="color: blue;" ></i>
+                                    <i id="eye-close" class="fa fa-eye-slash" style="color: black;" ></i>
+                                </span>
+                            <h6 class="forgot-pswrd">Forgot password</h6>
+                            </div>
+                    
+                            <button type="submit" class="submit-btn">Login</button>
+                        </form>
+
+                        <button type="button" class="btn" onclick="openRegister()">New User - Register</button>
+                    
+                    </div>
+                    </div>
+
+
+                    <div class="card-back">
+
+                    <div class="login-form">
+                        <h1>Register</h1>
+                        <form action="#">
+                            <p>Name</p>
+                            <input type="text" name="Name" placeholder="Name" required>
+
+                            <p>E-mail</p>
+                            <input type="email" name="Email" placeholder="E-mail" required>
+                            
+                            <p>Password</p>
+                            <div class = "wrapper">
+                                <input type="password" name="password" placeholder="Password" id="myInput" required>
+                                <span class="eye" onclick="myFunction()">
+                                    <i id="eye-open" class="fa fa-eye" style="color: blue;" ></i>
+                                    <i id="eye-close" class="fa fa-eye-slash" style="color: black;" ></i>
+                                </span>
+                            <h6 class="forgot-pswrd">Forgot password</h6>
+                            </div>
+                    
+                            <button type="submit" class="submit-btn">Register</button>
+                        </form>
+
+                        <button type="button" class="btn" onclick="openLogin()">Already Registered - Login</button>
+                    
+                    </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function myFunction(){
+                var x = document.getElementById("myInput");
+                var y = document.getElementById("eye-open");
+                var z = document.getElementById("eye-close");
+
+                if(x.type === 'password'){
+                    x.type = "text";
+                    y.style.display = "block";
+                    z.style.display = "none";
+                }
+                else{
+                    x.type = "password";
+                    y.style.display = "none";
+                    z.style.display = "block";
+                }
+            }
+
+            var card = document.getElementById("card");
+
+            function openRegister(){
+                card.style.transform = "rotateY(-180deg)";
+            }
+
+            function openLogin(){
+                card.style.transform = "rotateY(0deg)";
+            }
+
+        </script>
+
+    </body>
+
+</html>
